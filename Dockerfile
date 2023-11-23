@@ -15,10 +15,10 @@ FROM openjdk:17-ea-17
 
 # Exponer el puerto que utilizará la aplicación
 # 9001 esta en routes
-EXPOSE 9091
+EXPOSE 9001
 
 # Copiar el archivo JAR construido desde la etapa anterior
-COPY --from=build /app/target/ejercicio-1.0-SNAPSHOT.jar /app/ejercicio-1.0-SNAPSHOT.jar
+COPY --from=build /app/target/ejercicio-1.0-SNAPSHOT-jar-with-dependencies.jar /app/ejercicio-1.0-SNAPSHOT-jar-with-dependencies.jar
 
 # Establecer el punto de entrada para ejecutar la aplicación
-ENTRYPOINT ["java", "-jar", "/app/ejercicio-1.0-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "/app/ejercicio-1.0-SNAPSHOT-jar-with-dependencies.jar"]

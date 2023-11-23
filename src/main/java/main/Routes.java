@@ -22,7 +22,7 @@ public class Routes implements WithSimplePersistenceUnit {
 
   public void start() {
     System.out.println("Iniciando servidor");
-
+    Spark.ipAddress("0.0.0.0");
     Spark.port(9001);
     Spark.staticFileLocation("/public");
 
